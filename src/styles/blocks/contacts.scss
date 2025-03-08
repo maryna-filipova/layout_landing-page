@@ -1,0 +1,102 @@
+.contacts {
+  @include page-grid;
+
+  max-width: 800px;
+  margin: 0 auto;
+  gap: 2rem;
+
+  .section-title {
+    margin-bottom: 1.5rem;
+    white-space: nowrap;
+  }
+
+  .contacts__wrapper {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form {
+    display: grid;
+    gap: 1rem;
+    width: 280px;
+  }
+
+  .form__fields {
+    display: grid;
+    gap: 1rem;
+    width: 280px;
+  }
+
+  .form__field {
+    width: 280px;
+    height: 48px;
+    border: none;
+    border-radius: 5px;
+    color: #f9f9f9;
+
+    :hover {
+      border: 1px solid #dbdbdb;
+    }
+
+    :active {
+      border: 2px solid #f98921;
+    }
+  }
+
+  .form__field--message {
+    height: 148px;
+  }
+
+  .form__field--button {
+    width: 280px;
+    background: #1b2129;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 32px;
+    margin-bottom: 48px;
+
+    &:active {
+      background: #010810;
+    }
+  }
+
+  .contacts__details {
+    grid-column: span 2;
+    display: grid;
+    gap: 0.5rem;
+    text-align: left;
+  }
+
+  .contacts__details-title {
+    color: #9393a3;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  @include on-tablet {
+    .contacts__wrapper {
+      grid-column: 1 / -1;
+    }
+
+    .contacts__details {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @include on-desktop {
+    .contacts__wrapper {
+      grid-column: 1 / 6;
+    }
+
+    .contacts__details {
+      grid-column: 7 / 12;
+    }
+  }
+}
